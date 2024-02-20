@@ -18,7 +18,7 @@ const SearchInput = ({ engine }: ISearchbar) => {
             ddg: `https://duckduckgo.com/?q=${value}`
         }[engine]
 
-        window.location.href = url
+        window.open(url, "_self")
     }
 
 
