@@ -23,66 +23,117 @@ body {
         @include Flex(c, c, c);
     }
 
-    img.logo {
-        @include FullSize(200px);
-
-        img {
+    img {
+        &.background {
+            position: absolute;
+            @include Layer(-1, absolute);
+            opacity: .2;
+            left: 0;
+            top: 0;
             @include FullSize;
         }
-    }
 
-    section.search-engines {
-        display: flex;
-
-        section.engine {
-            cursor: pointer;
-            @include FullSize(80px);
-            @include Flex(c, c);
-            background: $clr-blackl;
-            border-radius: .15em;
-            margin: 0 .25em;    
-            transition: .15s;
-
+        &.logo {
+            @include FullSize(150px);
+    
             img {
-                width: 60%;
-            }
-
-            &.active {
-                background: $clr-greend;
-                pointer-events: none;
+                @include FullSize;
             }
         }
     }
 
-    section.searchbar {
-        display: flex;
-        width: 600px;
-        margin: 3em 0;
+    section {
+        &.tips {
+            position: absolute;
+            left: 8px;
+            top: 8px;
+    
+            ul {
+                margin-top: .5em;
+                display: none;
+                overflow: hidden;
+                height: 0;
+                list-style: none;
 
-        span.search-icon {
-            background: $clr-blackl;
-            @include FullSize(60px, y);
-            @include Flex(c, c);
-            border-radius: .25em 0 0 .25em;
+                li {
+                    font-size: .9rem;
 
-            svg {
-                @include FullSize(80%);
+                    span.clr {
+                        color: $clr-greenlr;
+                    }
+                }
+            }
+    
+            p.tips {
+                @include Flex(fs, c);
+                color: $clr-whited;
+                letter-spacing: -1px;
+                cursor: pointer;
+    
+                span {
+                    @include FullSize(20px, y);
+                    transition: .25s;
+    
+                    svg {
+                        @include FullSize;
+                    }
+                }
             }
         }
 
-        input {
-            flex-grow: 1;
-            background: $clr-blackl;
-            color: $clr-whited;
-            border-radius: 0 .25em .25em 0;
-            padding: 0 .5em;
-            outline: 0;
-            border: 0;
-            font-size: 1.1rem;
+        &.search-engines {
+            display: flex;
+    
+            section.engine {
+                cursor: pointer;
+                @include FullSize(80px);
+                @include Flex(c, c);
+                background: $clr-blackl;
+                border-radius: .15em;
+                margin: 0 .25em;    
+                transition: .15s;
+    
+                img {
+                    width: 60%;
+                }
+    
+                &.active {
+                    background: $clr-greend;
+                    pointer-events: none;
+                }
+            }
+        }
 
-            &::placeholder {
-                color: $clr-greyd;
-                font-size: .9rem;
+        &.searchbar {
+            display: flex;
+            width: 600px;
+            margin: 3em 0;
+    
+            span.search-icon {
+                background: $clr-blackl;
+                @include FullSize(60px, y);
+                @include Flex(c, c);
+                border-radius: .25em 0 0 .25em;
+    
+                svg {
+                    @include FullSize(50%);
+                }
+            }
+    
+            input {
+                flex-grow: 1;
+                background: $clr-blackl;
+                color: $clr-whited;
+                border-radius: 0 .25em .25em 0;
+                padding: 0 .5em;
+                outline: 0;
+                border: 0;
+                font-size: 1.1rem;
+    
+                &::placeholder {
+                    color: $clr-greyd;
+                    font-size: .9rem;
+                }
             }
         }
     }

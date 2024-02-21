@@ -4,7 +4,7 @@ import { IIcon } from "../../interfaces/interfaces"
 const Icon = ({ icon, cname }: IIcon) => {
     return (
 
-        <span className={ cname }>
+        <span className={cname}>
 
             {icon}
 
