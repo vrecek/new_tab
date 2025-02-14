@@ -15,18 +15,7 @@ const Tips = () => {
 
             <TipsHeader />
 
-            <ul>
-
-                {
-                    tips.map((x, i) => (
-                        <Tip
-                            key={i}
-                            msg={x.msg}
-                        />
-                    ))
-                }
-
-            </ul>
+            <ul> { tips.map((x, i) => <Tip key={i} msg={x.msg} />) } </ul>
 
         </section>
     )

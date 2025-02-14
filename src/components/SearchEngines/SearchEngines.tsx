@@ -1,37 +1,24 @@
-import { EngineObject, ISearchEngine } from "../../interfaces/interfaces"
-import brave from '../../images/brave.png'
-import google from '../../images/google.png'
-import ddg from '../../images/ddg.png'
-import startpage from '../../images/startpage.png'
-import searx from '../../images/searx.png'
+import { set_engine_fn } from "@/utils/SetFunctions"
+import { ISearchEngine } from "../../interfaces/interfaces"
 import Engine from "./Engine"
 
 
-const SearchEngines = ({ setEngine }: ISearchEngine) => {
-    const engines: EngineObject[] = [
-        { img: brave, txt: 'brave' },
-        { img: ddg, txt: 'ddg' },
-        { img: google, txt: 'google' },
-        { img: startpage, txt: 'startpage' },
-        { img: searx, txt: 'searx' },
-    ]
-
-
+const SearchEngines = ({ setSettings, engines, engine }: ISearchEngine) => {
     return (
         <section className="search-engines">
-
             {
                 engines.map((x, i) => (
+                    x.visible &&
                     <Engine 
-                        isActive={!i}
+                        visible={true}
+                        isActive={engine === x.engine}
                         key={i}
                         img={x.img}
-                        txt={x.txt}
-                        setEngine={setEngine}
+                        engine={x.engine}
+                        set_engine_fn={() => set_engine_fn(setSettings, x.engine)}
                     />
                 ))
             }
-
         </section>
     )
 }

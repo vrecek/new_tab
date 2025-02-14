@@ -21,7 +21,7 @@ const TipsHeader = () => {
 
 
     return (
-        <p onClick={toggleTips} className="tips">
+        <p onClick={toggleTips} className="tips-header">
 
             Tips
             <Icon cname="arrow-icon" icon={<MdKeyboardArrowDown />} />

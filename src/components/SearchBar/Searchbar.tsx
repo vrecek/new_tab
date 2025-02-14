@@ -6,7 +6,6 @@ import { ISearchbar } from "../../interfaces/interfaces"
 
 const Searchbar = ({ engine }: ISearchbar) => {
     return (
-
         <section className="searchbar">
 
             <Icon 
@@ -17,7 +16,6 @@ const Searchbar = ({ engine }: ISearchbar) => {
             <SearchInput engine={engine} />
 
         </section>
-
     ) 
 }
 

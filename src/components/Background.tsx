@@ -1,7 +1,7 @@
-import bg from '../images/bg.jpg'
+import { IBackground } from "@/interfaces/interfaces"
 
 
-const Background = () => {
+const Background = ({ bg }: IBackground) => {
     return (
         <img 
             src={bg}

@@ -3,6 +3,7 @@
 
 * {
     box-sizing: border-box;
+    font-family: 'FiraCode';
     margin: 0;
     padding: 0;
 }
@@ -15,126 +16,12 @@ body {
 
     background: #303030;
     color: #fff;
-    font-family: 'FiraCode';
+
+    svg { @include Rectangle; }
 
     main {
         width: 100vw;
         height: 100vh;
         @include Flex(c, c, c);
-    }
-
-    img {
-        &.background {
-            position: absolute;
-            @include Layer(-1, absolute);
-            opacity: .2;
-            left: 0;
-            top: 0;
-            @include FullSize;
-        }
-
-        &.logo {
-            @include FullSize(150px);
-    
-            img {
-                @include FullSize;
-            }
-        }
-    }
-
-    section {
-        &.tips {
-            position: absolute;
-            left: 8px;
-            top: 8px;
-    
-            ul {
-                margin-top: .5em;
-                display: none;
-                overflow: hidden;
-                height: 0;
-                list-style: none;
-
-                li {
-                    font-size: .9rem;
-
-                    span.clr {
-                        color: $clr-greenlr;
-                    }
-                }
-            }
-    
-            p.tips {
-                @include Flex(fs, c);
-                color: $clr-whited;
-                letter-spacing: -1px;
-                cursor: pointer;
-    
-                span {
-                    @include FullSize(20px, y);
-                    transition: .25s;
-    
-                    svg {
-                        @include FullSize;
-                    }
-                }
-            }
-        }
-
-        &.search-engines {
-            display: flex;
-    
-            section.engine {
-                cursor: pointer;
-                @include FullSize(80px);
-                @include Flex(c, c);
-                background: $clr-blackl;
-                border-radius: .15em;
-                margin: 0 .25em;    
-                transition: .15s;
-    
-                img {
-                    width: 60%;
-                }
-    
-                &.active {
-                    background: $clr-greend;
-                    pointer-events: none;
-                }
-            }
-        }
-
-        &.searchbar {
-            display: flex;
-            width: 600px;
-            margin: 3em 0;
-    
-            span.search-icon {
-                background: $clr-blackl;
-                @include FullSize(60px, y);
-                @include Flex(c, c);
-                border-radius: .25em 0 0 .25em;
-    
-                svg {
-                    @include FullSize(50%);
-                }
-            }
-    
-            input {
-                flex-grow: 1;
-                background: $clr-blackl;
-                color: $clr-whited;
-                border-radius: 0 .25em .25em 0;
-                padding: 0 .5em;
-                outline: 0;
-                border: 0;
-                font-size: 1.1rem;
-    
-                &::placeholder {
-                    color: $clr-greyd;
-                    font-size: .9rem;
-                }
-            }
-        }
     }
 }

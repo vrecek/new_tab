@@ -49,13 +49,11 @@ $clr-oranged: rgb(230, 72, 15);
 // # # # # # # # # # # # # # # # # # MIXINS # # # # # # # # # # # # # # # # # # # # # # # 
 
 // Sets both width and height to $size, optional display:block
-@mixin FullSize($size: 100%, $block: "") {
+@mixin Rectangle($size: 100%, $block: "") {
     width: $size;
     height: $size;
 
-    @if $block != "" {
-        display: block;
-    }
+    @if $block == "" { display: block; }
 }
 
 // Sets the minimum, current, and maximum width of a container
@@ -64,6 +62,7 @@ $clr-oranged: rgb(230, 72, 15);
     min-width: #{$minPX}px;
     max-width: #{$max};
 }
+
 // Resets the min/max width properties. Use with SetWidth
 @mixin ResetWidth {
     min-width: auto;
@@ -99,9 +98,11 @@ $clr-oranged: rgb(230, 72, 15);
 
 
 
-
-// # # # # # # # # # # # # # # # HELPER FUNCTIONS # # # # # # # # # # # # # # # # # # # # #
-
+/* 
+    ####################################
+    ######## PRIVATE FUNCTIONS #########
+    ####################################
+*/
 @function FlexFunc($val) {
     $finalVal: none;
 
@@ -114,6 +115,7 @@ $clr-oranged: rgb(230, 72, 15);
 
     @return $finalVal;
 }
+
 @function FlexDirFunc($val) {
     $finalVal: row;
 
@@ -124,7 +126,7 @@ $clr-oranged: rgb(230, 72, 15);
     @return $finalVal;
 }
 
-// # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+// ########################################################################################
 
 
 

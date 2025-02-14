@@ -1,15 +1,11 @@
 import { IIcon } from "../../interfaces/interfaces"
 
 
-const Icon = ({ icon, cname }: IIcon) => {
+const Icon = ({ icon, cname, clickfn }: IIcon) => {
     return (
-
-        <span className={cname}>
-
+        <span onClick={clickfn} className={cname}>
             {icon}
-
         </span>
-
     )
 }
 
