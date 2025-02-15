@@ -41,7 +41,6 @@ const initial_settings = async (): Promise<Options> => {
 
         return default_settings
     }
-    window.localStorage.clear()
 
     return settings
 }
