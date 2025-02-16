@@ -90,12 +90,28 @@ aside.settings {
             label { 
                 font-size: .8rem;
                 width: 10%;
-                color: $clr-whitel;
+                color: $clr-whitelr;
             }
 
             input {
                 flex-grow: 1;
                 display: block;
+                appearance: none;
+                background: $clr-whited;
+                cursor: pointer;
+                height: 5px;
+
+                &::-moz-range-progress {
+                    height: inherit;
+                    background: $clr-bluel;
+                }
+
+                &::-moz-range-thumb {
+                    background: $clr-bluel;
+                    border: 0;
+                    @include Rectangle(20px);
+                    border-radius: 50%;
+                }
             }
         }
 
