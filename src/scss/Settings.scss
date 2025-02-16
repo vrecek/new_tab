@@ -22,7 +22,7 @@ aside.settings {
     animation-duration: 250ms;
 
     button.reset-btn {
-        background: $clr-red;
+        background: $clr-redl;
         border-radius: .25em;
         margin-top: 2em;
         padding: .5em 1em;
@@ -78,7 +78,24 @@ aside.settings {
         &.settings-background {
             li {
                 width: 30%;
-                margin-bottom: .5em;
+                &:first-child { margin-bottom: .5em; }
+            }
+        }
+
+        &.settings-opacity {
+            div {
+                @include Flex(none, c);
+            }
+
+            label { 
+                font-size: .8rem;
+                width: 10%;
+                color: $clr-whitel;
+            }
+
+            input {
+                flex-grow: 1;
+                display: block;
             }
         }
 

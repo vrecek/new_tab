@@ -3,6 +3,7 @@ import Settings_SearchEngines from "./Settings_SearchEngines"
 import Settings_Tips from "./Settings_Tips"
 import Settings_Background from "./Settings_Background"
 import { clearStorage } from "@/utils/StorageFunctions"
+import Settings_Opacity from "./Settings_Opacity"
 
 
 const Settings = ({ setSettings, settings }: ISettings) => {
@@ -21,6 +22,11 @@ const Settings = ({ setSettings, settings }: ISettings) => {
                 setSettings={setSettings} 
                 bgs={settings.backgrounds} 
                 bg={settings.background} 
+            />
+
+            <Settings_Opacity 
+                setSettings={setSettings} 
+                opacity={settings.opacity}
             />
 
             <button className="reset-btn" onClick={clearStorage}>

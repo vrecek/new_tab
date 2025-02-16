@@ -1,17 +1,24 @@
 @import './config';
 
 
-img {
-    &.background {
+figure {
+    &.background-image {
         position: absolute;
         @include Layer(-1, absolute);
         opacity: .2;
         left: 0;
         top: 0;
         @include Rectangle;
+
+        img {
+            @include Rectangle;
+            object-fit: cover;
+        }
     }
 
-    &.logo { @include Rectangle(150px); }
+    &.logo { 
+        img { @include Rectangle(150px); }
+    }
 }
 
 section.tips {
@@ -93,7 +100,8 @@ section.searchbar {
         padding: 0 .5em;
         outline: 0;
         border: 0;
-        font-size: 1.1rem;
+        font-size: 1rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
 
         &::placeholder {
             color: $clr-greyd;

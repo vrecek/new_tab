@@ -15,7 +15,7 @@ const Settings_Background = ({ setSettings, bg, bgs }: ISettings_BG) => {
 
                     </li>
                 ))}
-            </ul>            
+            </ul>        
 
         </Setting_Section>
     )

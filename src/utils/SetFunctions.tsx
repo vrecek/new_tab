@@ -28,6 +28,15 @@ const set_engine_fn = (setter: OptionsSetter, new_engine: Engines): void => {
     })
 }
 
+const set_opacity_fn = (setter: OptionsSetter, new_opacity: number): void => {
+    setter(curr => {
+        curr.opacity = new_opacity
+        setStorage({...curr, show_sett: false})
+
+        return {...curr}
+    })
+}
+
 const set_background_fn = (setter: OptionsSetter, new_bg: string): void => {
     setter(curr => {
         curr.background = new_bg
@@ -71,6 +80,7 @@ export {
     toggle_settings,
     toggle_tips,
     set_engine_fn,
+    set_opacity_fn,
     set_background_fn,
     update_engines
 }

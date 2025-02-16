@@ -1,20 +1,22 @@
 import { MdKeyboardArrowDown } from "react-icons/md"
 import Icon from "../common/Icon"
 import React from "react"
-import Client, { DD } from "../../utils/Client"
+import Dropdown, { DD } from "@/utils/Dropdown"
 
 
 const TipsHeader = () => {
-    const [dd] = React.useState<DD.DropDown>(new Client.DropDown(250))
+    const [dd] = React.useState<DD.DropDown>(new Dropdown(250))
 
     const toggleTips = (e: React.MouseEvent): void => {
         const t:     HTMLElement = e.currentTarget! as HTMLElement,
               list:  HTMLElement = t.parentElement!.children[1] as HTMLElement,
               arrow: HTMLElement = t.children[0] as HTMLElement
 
+        !dd.getElement() && dd.setElement(list)
+
         dd.switchActive()
-        dd.getActive() 
-            ? dd.expandMenu(list)
+        dd.isActive() 
+            ? dd.expandMenu()
             : dd.shrinkMenu()
         dd.rotateArrow(arrow)
     }

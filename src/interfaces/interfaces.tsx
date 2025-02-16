@@ -3,12 +3,13 @@ import React from "react"
 
 export type IIcon = {
     icon:     JSX.Element
-    cname:    string
+    cname?:   string
     clickfn?: (e: React.MouseEvent) => void
 }
 
 export type IBackground = {
-    bg: string
+    bg:      string
+    opacity: number
 }
 
 export type ISearchbar = {
@@ -24,7 +25,7 @@ export type OptionsSetState = {
 }
 
 
-export type Engines = 'Brave' | 'Google' | 'DDG' | 'Startpage' | 'SearX' | 'Bing' | 'Yahoo'
+export type Engines = 'Brave' | 'Google' | 'DDG' | 'Startpage' | 'Bing' | 'Yahoo'
 
 
 export type ISearchEngine = OptionsSetState & {
@@ -67,6 +68,7 @@ export type ISettings_SE = OptionsSetState & {
 export type Options = {
     background:  string
     backgrounds: string[]
+    opacity:     number
     show_tips:   boolean
     show_sett:   boolean
     engines:     EngineObject[]
@@ -86,4 +88,8 @@ export type ISetting_Tips = OptionsSetState & {
 export type ISettings_BG = OptionsSetState & {
     bg:  string
     bgs: string[]
+}
+
+export type ISettings_Opacity = OptionsSetState & {
+    opacity: number
 }

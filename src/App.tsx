@@ -26,7 +26,7 @@ function App() {
     return (
         <main>
 
-            <Background bg={settings.background} />
+            <Background opacity={settings.opacity} bg={settings.background} />
 
             { settings.show_tips && <Tips /> }
 

@@ -3,11 +3,14 @@ import logo from '../images/wolf.png'
 
 const Logo = () => {
     return (
-        <img 
-            className='logo'
-            src={logo} 
-            alt='Logo' 
-        />
+        <figure className='logo'>
+
+            <img 
+                src={logo} 
+                alt='Logo' 
+            />
+
+        </figure>
     )
 }
 
