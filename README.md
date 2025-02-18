@@ -7,9 +7,11 @@ A custom "New Tab" page that pops up on a new tab creation
 > [!CAUTION]
 > Be careful when installing extensions
 
+3. Alternatively, you can clone the repo, build the .html by `npm run build`, and load the page from the local file, if your browser allows to do so.  
+
 ### Usage
 Page consists of:  
-- Quick search engine choose  
+- Search engine option   
 - Background  
 - Search tips  
 - Settings to change things above  

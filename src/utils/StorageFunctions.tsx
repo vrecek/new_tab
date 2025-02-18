@@ -2,6 +2,7 @@ import { Options } from "@/interfaces/interfaces"
 import getEngines from "./GetEngines"
 
 
+
 const getStorage = (): Options | null => JSON.parse( window.localStorage.getItem("settings")! )
 
 const setStorage = (obj: Options): void => window.localStorage.setItem("settings", JSON.stringify(obj))
@@ -16,16 +17,17 @@ const initial_settings = async (): Promise<Options> => {
 
     if (!settings)
     {
-        const bgs: string[] = []
+        const bgs:   string[] = []
+        let   count: number   = 0
 
-        for (let i = 1; i <= 6; i++)
+        while (1)
         {
             try
             {
-                const img: any = await import(`@/images/backgrounds/background${i}.jpg`)
+                const img: any = await import(`@/images/backgrounds/background${++count}.webp`)
                 bgs.push(img.default)
             }
-            catch {}
+            catch (err) { break }
         }
 
         const default_settings: Options = {

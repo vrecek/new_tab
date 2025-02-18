@@ -16,9 +16,9 @@ export type ISearchbar = {
     engine: Engines
 }
 
-export type SetEngineDispatch = React.Dispatch<React.SetStateAction<Engines>> 
-export type OptionsDispatch = React.Dispatch<React.SetStateAction<Options | null>> 
-export type OptionsSetter = React.Dispatch<React.SetStateAction<Options>> 
+export type SetEngineDispatch = Setter<Engines>
+export type OptionsDispatch = Setter<Options | null>
+export type OptionsSetter = Setter<Options>
 
 export type OptionsSetState = {
     setSettings: OptionsSetter
@@ -93,3 +93,12 @@ export type ISettings_BG = OptionsSetState & {
 export type ISettings_Opacity = OptionsSetState & {
     opacity: number
 }
+
+export type SliderDirections = 'left' | 'right'
+
+export type ISliderArrow = {
+    direction: SliderDirections
+    fn:        (e: React.MouseEvent, dir: SliderDirections) => void
+}
+
+export type Setter<T> = React.Dispatch<React.SetStateAction<T>>

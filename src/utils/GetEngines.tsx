@@ -1,10 +1,10 @@
 import { EngineObject } from "../interfaces/interfaces"
-import brave from '@/images/engines/brave.png'
-import google from '@/images/engines/google.png'
-import bing from '@/images/engines/bing.png'
-import ddg from '@/images/engines/ddg.png'
-import startpage from '@/images/engines/startpage.png'
-import yahoo from '@/images/engines/yahoo.png'
+import brave from '@/images/engines/brave.webp'
+import google from '@/images/engines/google.webp'
+import bing from '@/images/engines/bing.webp'
+import ddg from '@/images/engines/ddg.webp'
+import startpage from '@/images/engines/startpage.webp'
+import yahoo from '@/images/engines/yahoo.webp'
 
 
 const getEngines = (): EngineObject[] => {

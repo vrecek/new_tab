@@ -78,7 +78,7 @@ aside.settings {
         &.settings-background {
             li {
                 width: 30%;
-                &:first-child { margin-bottom: .5em; }
+                margin-bottom: .5em;
             }
         }
 
@@ -116,19 +116,49 @@ aside.settings {
         }
 
         &.settings-background {
-            ul { justify-content: space-between; }
+            section.slider-main-container {
+                @include Flex(sb, c);
 
-            li {
-                border: 2px solid transparent;
-                cursor: pointer;
-                
-                img {
-                    @include Rectangle;
-                    object-fit: cover;
+                span.direction-arrow {
+                    @include Rectangle(25px);   
+                    flex-shrink: 0;
+                    cursor: pointer;
+                    transition: 150ms;
+
+                    &.off {
+                        pointer-events: none;
+                        color: $clr-greydr;
+                    }
                 }
 
-                &.border {
-                    border-color: $clr-bluel;
+                div.moving-wrapper {
+                    overflow: hidden;
+                    flex-grow: 1;
+                    margin: 0 .25em;
+
+                    div.slider-moving {
+                        display: flex;
+                        width: 100%;
+                        transition: .5s;
+                        // translate: -100% 0;
+        
+                        section.slider-inner-container {
+                            width: 100%;
+                            @include Flex(sb);
+                            flex-shrink: 0;
+                            flex-wrap: wrap;
+        
+                            img {
+                                width: 33%;
+                                aspect-ratio: 1.5;
+                                cursor: pointer;
+                                object-fit: cover;
+                                border: 2px solid transparent;
+                                
+                                &.border { border-color: $clr-bluel; }
+                            }
+                        }
+                    }
                 }
             }
         }

@@ -18,8 +18,10 @@ const SearchInput = ({ engine }: ISearchbar) => {
     return (
         <input
             onKeyDown={submitFn}
+            className="searchquery-input"
             type='text'
             spellCheck='false'
+            autoFocus
             placeholder="Make your query..."
         />
     )
