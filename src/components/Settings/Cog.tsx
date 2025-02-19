@@ -1,21 +1,37 @@
+import { update_images } from '@/utils/SliderUtils'
 import Icon from '../common/Icon'
 import { FaCog } from 'react-icons/fa'
-import { SettingsState } from '@/interfaces/interfaces';
+import { ICog } from '@/interfaces/interfaces'
+import React from 'react'
 
 
-const Cog = ({ setter, settings }: SettingsState) => {
+const Cog = ({ bgs }: ICog) => {
+    const [was_opened, setOpen] = React.useState<boolean>(false)
+
+
     const toggle_settings = () => {
-        let ms = 0
-
-        if (settings)
+        const aside: HTMLElement = document.querySelector('aside.settings')!
+        
+        if (!was_opened)
         {
-            const aside: HTMLElement = document.querySelector('aside.settings')!
+            const box: Element = document.querySelector('section.slider-main-container div.slider-moving')!
 
-            ms = 250
-            aside.style.translate = '100% 0'
+            update_images(0, box.children[0], bgs)
+            setOpen(true)
         }
 
-        setTimeout(setter, ms)
+        aside.classList.toggle('active')
+
+        if (aside.classList.contains('active'))
+        {
+            aside.style.display = 'block'
+            setTimeout(() => aside.style.translate = '0 0', 1)
+        }
+        else
+        {
+            aside.style.translate = '100% 0'
+            setTimeout(() => aside.style.display = 'none', 250)
+        }
     }   
 
 

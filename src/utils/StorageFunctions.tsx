@@ -34,7 +34,6 @@ const initial_settings = async (): Promise<Options> => {
             background:  bgs[0],
             backgrounds: bgs,
             opacity:     .2,
-            show_sett:   false,
             show_tips:   true,
             engine:      'Brave',
             engines:     getEngines()

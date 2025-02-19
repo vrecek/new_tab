@@ -4,10 +4,12 @@ import { set_background_fn } from "./SetFunctions"
 
 
 const update_images = (container_nr: number, container: Element, bgs: string[]): void => {
-    const img: number             = container_nr * 6,
-          ch:  HTMLImageElement[] = [...container.children] as HTMLImageElement[]
+    const ch: HTMLImageElement[] = [...container.children] as HTMLImageElement[]
 
-    if (ch[0].src) return
+    if (ch[0].src)
+        return
+
+    const img: number = container_nr * 6
 
     for (let i = 0; i < 6; i++)
         ch[i].src = bgs[img+i]
@@ -90,8 +92,6 @@ const slider_init = (bgs: string[], bg: string, setter: OptionsSetter): void => 
             set_background_fn(setter, bgs[i])
         })
     }
-
-    update_images(0, container.children[0], bgs)
 }
 
 

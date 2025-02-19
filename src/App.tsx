@@ -10,7 +10,6 @@ import './css/Main.css'
 import './css/Settings.css'
 import Settings from './components/Settings/Settings'
 import Cog from './components/Settings/Cog'
-import { toggle_settings } from './utils/SetFunctions'
 import { initial_settings } from './utils/StorageFunctions'
 
 
@@ -38,15 +37,12 @@ function App() {
                 engine={settings.engine} 
             />
 
-            { 
-                settings.show_sett && 
-                <Settings 
-                    setSettings={setSettings as OptionsSetter}
-                    settings={settings}
-                /> 
-            }
+            <Settings 
+                setSettings={setSettings as OptionsSetter}
+                settings={settings}
+            /> 
 
-            <Cog settings={settings.show_sett} setter={() => toggle_settings(setSettings as OptionsSetter)} />
+            <Cog bgs={settings.backgrounds} />
 
         </main> 
     )

@@ -16,10 +16,10 @@ aside.settings {
     right: 0;
     top: 0;
     transition: 250ms;
+    display: none;
     @include SetWidth(100%, 100%, 450px);
     height: 100vh;
-    animation: settings_popup_anim;
-    animation-duration: 250ms;
+    translate: 100% 0;
 
     button.reset-btn {
         background: $clr-redl;
@@ -140,7 +140,6 @@ aside.settings {
                         display: flex;
                         width: 100%;
                         transition: .5s;
-                        // translate: -100% 0;
         
                         section.slider-inner-container {
                             width: 100%;
@@ -162,11 +161,6 @@ aside.settings {
                 }
             }
         }
-    }
-
-    @keyframes settings_popup_anim {
-        0% { translate: 100% 0; }
-        100% { translate: 0 0; }
     }
 }
 

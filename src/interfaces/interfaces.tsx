@@ -70,7 +70,6 @@ export type Options = {
     backgrounds: string[]
     opacity:     number
     show_tips:   boolean
-    show_sett:   boolean
     engines:     EngineObject[]
     engine:      Engines
 }
@@ -102,3 +101,7 @@ export type ISliderArrow = {
 }
 
 export type Setter<T> = React.Dispatch<React.SetStateAction<T>>
+
+export type ICog = {
+    bgs: string[]
+}
