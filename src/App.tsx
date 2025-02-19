@@ -42,7 +42,7 @@ function App() {
                 settings={settings}
             /> 
 
-            <Cog bgs={settings.backgrounds} />
+            <Cog bgs={settings.backgrounds} bg={settings.background} />
 
         </main> 
     )

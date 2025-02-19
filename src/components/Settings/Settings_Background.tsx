@@ -6,7 +6,7 @@ import { change_slide, slider_init } from "@/utils/SliderUtils"
 
 
 const Settings_Background = ({ setSettings, bg, bgs }: ISettings_BG) => {
-    const [slide_nr, setSlide_nr] = React.useState<number>(0)
+    const [slide_nr, setSlide_nr] = React.useState<number>(~~(bgs.indexOf(bg) / 6))
 
 
     React.useEffect(() => slider_init(bgs, bg, setSettings), [])

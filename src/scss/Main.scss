@@ -59,7 +59,7 @@ section.search-engines {
 
     section.engine {
         cursor: pointer;
-        @include Rectangle(80px);
+        @include Rectangle(70px);
         @include Flex(c, c);
         background: $clr-blackl;
         border-radius: .15em;

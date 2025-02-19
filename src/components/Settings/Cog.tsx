@@ -1,11 +1,11 @@
-import { update_images } from '@/utils/SliderUtils'
+import { determine_arrows, update_images } from '@/utils/SliderUtils'
 import Icon from '../common/Icon'
 import { FaCog } from 'react-icons/fa'
 import { ICog } from '@/interfaces/interfaces'
 import React from 'react'
 
 
-const Cog = ({ bgs }: ICog) => {
+const Cog = ({ bgs, bg }: ICog) => {
     const [was_opened, setOpen] = React.useState<boolean>(false)
 
 
@@ -14,9 +14,10 @@ const Cog = ({ bgs }: ICog) => {
         
         if (!was_opened)
         {
-            const box: Element = document.querySelector('section.slider-main-container div.slider-moving')!
+            const slide_nr: number = ~~(bgs.indexOf(bg) / 6) 
 
-            update_images(0, box.children[0], bgs)
+            determine_arrows(slide_nr, bgs)
+            update_images(slide_nr, bgs)
             setOpen(true)
         }
 

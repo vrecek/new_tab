@@ -96,6 +96,7 @@ export type ISettings_Opacity = OptionsSetState & {
 export type SliderDirections = 'left' | 'right'
 
 export type ISliderArrow = {
+    cname?:    string
     direction: SliderDirections
     fn:        (e: React.MouseEvent, dir: SliderDirections) => void
 }
@@ -104,4 +105,5 @@ export type Setter<T> = React.Dispatch<React.SetStateAction<T>>
 
 export type ICog = {
     bgs: string[]
+    bg:  string
 }

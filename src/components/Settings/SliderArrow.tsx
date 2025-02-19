@@ -3,11 +3,11 @@ import Icon from "../common/Icon"
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io"
 
 
-const SliderArrow = ({ direction, fn }: ISliderArrow) => {
+const SliderArrow = ({ direction, fn, cname }: ISliderArrow) => {
     return (
         <Icon  
             icon={ direction === 'left' ? <IoIosArrowBack /> : <IoIosArrowForward /> }
-            cname="direction-arrow"
+            cname={`direction-arrow ${cname}`}
             clickfn={(e) => fn(e, direction)}
         />
     )
